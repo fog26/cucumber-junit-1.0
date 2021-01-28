@@ -15,7 +15,7 @@ public class ScreenshotHook {
     public void takeScreenshot(Scenario scenario) {
         if (scenario.isFailed()) {
             try {
-                final byte[] screenshot = ((TakesScreenshot)DriverManager.getDriver())
+                final byte[] screenshot = ((TakesScreenshot) DriverManager.getDriver())
                         .getScreenshotAs(OutputType.BYTES);
                 scenario.attach(screenshot, PNG_FILE_EXTENSION, scenario.getName());
             } catch (Exception e) {

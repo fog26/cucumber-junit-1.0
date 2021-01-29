@@ -3,7 +3,8 @@ package com.cucumber.junit.steps;
 import com.cucumber.junit.driver.pages.DocsPage;
 import com.cucumber.junit.driver.pages.HomePage;
 import io.cucumber.java.en.When;
-import org.assertj.core.api.Assertions;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class MenuSteps {
 
@@ -27,7 +28,7 @@ public class MenuSteps {
 
     @When("page with title {string} should be displayed")
     public void verifyPageTitlePresence(String pageTitle) {
-        Assertions.assertThat(docsPage.isPageWithTitleDisplayed(pageTitle))
+        assertThat(docsPage.isPageWithTitleDisplayed(pageTitle))
                 .overridingErrorMessage("Page with title '%s' is not displayed", pageTitle)
                 .isTrue();
     }
